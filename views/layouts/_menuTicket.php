@@ -4,8 +4,10 @@
  */
 return [
 
-	['label' => \Yii::t('ticket','CSR'), 'url' => ['/ticket/csr/index']],
-	['label' => \Yii::t('ticket','RMA'), 'url' => ['/ticket/rma/index']],
-	['label' => \Yii::t('user', 'User'), 'url' => ['/user/admin'], 'title' => 'Administrator panel'],
+	['label' => \Yii::t('ticket','Ticket'), 'url' => '#', 'items' => [
+		['label' => \Yii::t('ticket','CSR'), 'url' => ['/ticket/csr/index']],
+		['label' => \Yii::t('ticket','RMA'), 'url' => ['/ticket/rma/index']],
+		['label' => \Yii::t('user', 'User'), 'url' => ['/user/admin'], 'title' => 'Administrator panel'],
+	]],
 
 ];

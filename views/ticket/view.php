@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 
 /**
  * @var yii\web\View $this
- * @var istt\ticket\models\Ticket $model
+ * @var vendor\istt\ticket\models\Ticket $model
  */
 
 $this->title = $model->title;
@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ticket-view">
 
-    <h1><small><?= \Yii::t('app', 'Ticket'); ?>:</small> <?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a(Yii::t('ticket', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>

@@ -1,10 +1,10 @@
 <?php
 
-namespace vendor\istt\ticket\controllers;
+namespace istt\ticket\controllers;
 
 use Yii;
-use vendor\istt\ticket\models\Ticket;
-use vendor\istt\ticket\models\TicketSearch;
+use istt\ticket\models\Ticket;
+use istt\ticket\models\TicketSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -140,7 +140,7 @@ class RmaController extends Controller
      */
     protected function findModel($id)
     {
-        if ($id !== null && ($model = Ticket::find($id)) !== null) {
+        if ($id !== null && ($model = Ticket::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

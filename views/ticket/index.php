@@ -2,25 +2,26 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use istt\ticket\models\Ticket;
 
 /**
  * @var yii\web\View $this
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var istt\ticket\models\TicketSearch $searchModel
+ * @var vendor\istt\ticket\models\TicketSearch $searchModel
  */
 
-$this->title = Yii::t('ticket', 'CSR');
+$this->title = Yii::t('ticket', 'Tickets');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ticket-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?php // echo $this->render('_searchTicket', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('ticket', 'Create CSR'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('ticket', 'Create {modelClass}', [
+  'modelClass' => 'Ticket',
+]), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -29,26 +30,32 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
+            'id',
             'title',
-//             'customer_fullname',
-//             'customer_company',
+            'type',
+            'customer_fullname',
+            'customer_company',
             // 'customer_phone',
-            'customer_email:email',
-            ['attribute' => 'status', 'value' => function($data){ return Ticket::statusOptions($data->status); }, 'filter' => Ticket::statusOptions(), 'format' => 'html'],
-            ['attribute' => 'priority', 'value' => function($data){ return Ticket::priorityOptions($data->priority); }, 'filter' => Ticket::priorityOptions(), 'format' => 'html'],
+            // 'customer_email:email',
             // 'system',
+            // 'priority',
             // 'detail:ntext',
             // 'suggestion:ntext',
             // 'created_at',
             // 'created_by',
             // 'updated_at',
             // 'updated_by',
-            'requested_at',
+            // 'requested_at',
             // 'replied_at',
             // 'fixed_begin',
             // 'fixed_end',
             // 'cause:ntext',
             // 'solution:ntext',
+            // 'status',
+            // 'site',
+            // 'hardware_type',
+            // 'hardware_part',
+            // 'hardware_serial',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
- * @var istt\ticket\models\Ticket $model
+ * @var vendor\istt\ticket\models\Ticket $model
  */
 
 $this->title = Yii::t('ticket', 'Update {modelClass}: ', [
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = Yii::t('ticket', 'Update');
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_formTicket', [
+    <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 
