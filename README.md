@@ -30,7 +30,7 @@ Then run the following commands:
 ~~~
 [bash]
 php composer.phar update
-./yii migrate/up --migratioticketath=@vendor/istt/yii2-ticket-module/migrations
+./yii migrate/up --migrationPath=@vendor/istt/yii2-ticket-module/migrations
 ~~~
 
 Last, add the module to your config file
