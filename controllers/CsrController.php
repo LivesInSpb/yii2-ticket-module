@@ -79,8 +79,7 @@ class CsrController extends Controller
         $model = new Ticket;
         $model->type = Ticket::TYPE_CSR;
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-        	$model->validateDate();
+        if ($model->load(Yii::$app->request->post()) && $model->validateDate() && $model->validate()) {
         	if ($model->save())
             	return $this->redirect(['view', 'id' => $model->id]);
         	else
@@ -103,9 +102,8 @@ class CsrController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+        if ($model->load(Yii::$app->request->post()) && $model->validateDate() && $model->validate()) {
             $model->type = Ticket::TYPE_CSR;
-            $model->validateDate();
         	if ($model->save())
             	return $this->redirect(['view', 'id' => $model->id]);
         	else

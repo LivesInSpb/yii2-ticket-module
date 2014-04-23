@@ -78,9 +78,8 @@ class RmaController extends Controller
     {
         $model = new Ticket;
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $model->validateDate() && $model->validate()) {
         	$model->type = Ticket::TYPE_RMA;
-			$model->validateDate();
         	if ($model->save())
         		return $this->redirect(['view', 'id' => $model->id]);
         	else
@@ -104,8 +103,7 @@ class RmaController extends Controller
         $model = $this->findModel($id);
         $model->type = Ticket::TYPE_RMA;
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-        	$model->validateDate();
+        if ($model->load(Yii::$app->request->post()) && $model->validateDate() && $model->validate()) {
         	if ($model->save())
         		return $this->redirect(['view', 'id' => $model->id]);
         	else
