@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					            'fixed_end:datetime',
 					            ['attribute' => 'cause', 'value' => kartik\markdown\Markdown::convert($model->cause), 'format' => 'html'],
 					            ['attribute' => 'solution', 'value' => kartik\markdown\Markdown::convert($model->solution), 'format' => 'html'],
-					            ['attribute' => 'status', 'value' => Ticket::statusOptions($model->status)],
+					            ['attribute' => 'status', 'value' => is_null($model->status)?NULL:Ticket::statusOptions($model->status)],
 					        ],
 					    ]) ?>
     <p>
