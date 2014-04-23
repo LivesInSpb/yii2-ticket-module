@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				<h3><?= \Yii::t('ticket', 'Customer Information')?></h3>
   				<?= DetailView::widget([
 				        'model' => $model,
-  						'template' => "<tr><th class='col-xs-6'>{label}</th><td class='col-xs-6'>{value}</td></tr>",
+  						'template' => "<tr><th class='col-xs-3'>{label}</th><td class='col-xs-9'>{value}</td></tr>",
 				        'attributes' => [
 				            'customer_fullname',
 				            'customer_company',
@@ -30,16 +30,16 @@ $this->params['breadcrumbs'][] = $this->title;
 	    	<h3><?= \Yii::t('ticket', 'CSR Information')?></h3>
   					<?=  DetailView::widget([
 					        'model' => $model,
-  							'template' => "<tr><th class='col-xs-6'>{label}</th><td class='col-xs-6'>{value}</td></tr>",
+  							'template' => "<tr><th class='col-xs-3'>{label}</th><td class='col-xs-9'>{value}</td></tr>",
 					        'attributes' => [
 					            'system',
-					            ['attribute' => 'priority', 'value' => Ticket::priorityOptions($model->priority)],
+					            ['attribute' => 'priority', 'value' => is_null($model->priority)?NULL:Ticket::priorityOptions($model->priority)],
 					            ['attribute' => 'detail', 'value' => kartik\markdown\Markdown::convert($model->detail), 'format' => 'html'],
 					            ['attribute' => 'suggestion', 'value' => kartik\markdown\Markdown::convert($model->suggestion), 'format' => 'html'],
-					            'created_at:datetime',
-					            'created_by',
-					            'updated_at:datetime',
-					            'updated_by',
+// 					            'created_at:datetime',
+// 					            'created_by',
+// 					            'updated_at:datetime',
+// 					            'updated_by',
 					            'requested_at:datetime',
 					            'replied_at:datetime',
 					            'fixed_begin:datetime',

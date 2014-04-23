@@ -46,10 +46,10 @@ class TicketSearch extends Ticket
             'created_by' => $this->created_by,
             'updated_at' => $this->updated_at,
             'updated_by' => $this->updated_by,
-            'requested_at' => $this->requested_at,
-            'replied_at' => $this->replied_at,
-            'fixed_begin' => $this->fixed_begin,
-            'fixed_end' => $this->fixed_end,
+//             'requested_at' => $this->requested_at,
+//             'replied_at' => $this->replied_at,
+//             'fixed_begin' => $this->fixed_begin,
+//             'fixed_end' => $this->fixed_end,
             'status' => $this->status,
         ]);
 
