@@ -199,4 +199,24 @@ class Ticket extends \yii\db\ActiveRecord
      		}
      	}
      }
+
+
+     /**
+      * Send notification based on email
+      */
+     public function afterSave($insert){
+     	$mail = Yii::$app->mail->compose(['html' =>  '/ticket/htmlEmail', 'text' =>  '/ticket/textEmail'], ['model' => $this])
+     	->setFrom(['support@istt.com.vn' => 'ISTT Support System'])
+     	// @TODO: Based on later configuration, let switch it using contacts...
+     	->setTo([
+//      		'thnhat@istt.com.vn' => 'Tran Hong Nhat',
+//      		'nhmphuc@istt.com.vn' => 'Nguyen Hoang Minh Phuc',
+     		'ndtrung@istt.com.vn' => 'Nguyen Dinh Trung'])
+     	// @TODO: Add the configuration for this...
+     	->setSubject($this->title)
+     	->send();
+     	if ($mail) \Yii::trace("Send mail successful");
+     	else Yii::trace("Cannot send mail");
+     	return parent::afterSave($insert);
+     }
 }
