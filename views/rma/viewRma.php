@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				<h3><?= \Yii::t('ticket', 'Customer Information')?></h3>
   					<?= DetailView::widget([
 					        'model' => $model,
-  							'template' => "<tr><th class='col-xs-4'>{label}</th><td class='col-xs-8'>{value}</td></tr>",
+  							'template' => "<tr><th class='col-xs-3'>{label}</th><td class='col-xs-9'>{value}</td></tr>",
 					        'attributes' => [
 					            'customer_fullname',
 					            'customer_company',
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				<h3><?= \Yii::t('ticket', 'RMA Information')?></h3>
   					<?=  DetailView::widget([
 					        'model' => $model,
-  							'template' => "<tr><th class='col-xs-4'>{label}</th><td class='col-xs-8'>{value}</td></tr>",
+  							'template' => "<tr><th class='col-xs-3'>{label}</th><td class='col-xs-9'>{value}</td></tr>",
 					        'attributes' => [
 					            'system',
 					             ['attribute' => 'priority', 'value' => is_null($model->priority)?NULL:Ticket::priorityOptions($model->priority)],
