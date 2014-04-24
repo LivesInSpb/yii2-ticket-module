@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = Yii::t('ticket', 'Update');
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_formTicket', [
+    <?= $this->render('_formCsr', [
         'model' => $model,
     ]) ?>
 

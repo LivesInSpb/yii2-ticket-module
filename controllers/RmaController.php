@@ -51,7 +51,7 @@ class RmaController extends Controller
         $param['TicketSearch']['type'] = Ticket::TYPE_RMA;
         $dataProvider = $searchModel->search($param);
 
-        return $this->render('indexTicket', [
+        return $this->render('indexRma', [
             'dataProvider' => $dataProvider,
             'searchModel' => $searchModel,
         ]);
@@ -64,7 +64,7 @@ class RmaController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('viewTicket', [
+        return $this->render('viewRma', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -87,7 +87,7 @@ class RmaController extends Controller
         		return \yii\helpers\VarDumper::dumpAsString($model->errors);
         } else {
         	$model->parseDate();
-            return $this->render('createTicket', [
+            return $this->render('createRma', [
                 'model' => $model,
             ]);
         }
@@ -112,7 +112,7 @@ class RmaController extends Controller
         		return \yii\helpers\VarDumper::dumpAsString($model->errors);
         } else {
         	$model->parseDate();
-            return $this->render('updateTicket', [
+            return $this->render('updateRma', [
                 'model' => $model,
             ]);
         }

@@ -8,6 +8,8 @@ use istt\ticket\models\TicketSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\db\Query;
+use yii\helpers\Json;
 
 /**
  * TicketController implements the CRUD actions for Ticket model.
@@ -117,5 +119,21 @@ class TicketController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    public function actionCustomerList($q = null) {
+    	$query = new Query();
+    	$query->distinct('customer_fullname')->select('customer_fullname, customer_company, customer_phone, customer_email')
+    	->from('{{%ticket}}')
+    	->where('customer_fullname LIKE "%' . $q .'%"')
+    	->orderBy('customer_fullname');
+    	$command = $query->createCommand();
+    	$data = $command->queryAll();
+    	echo Json::encode($data);
+//     	$out = [];
+//     	foreach ($data as $d) {
+//     		$out[] = $d['name'];
+//     	}
+//     	echo Json::encode($out);
     }
 }

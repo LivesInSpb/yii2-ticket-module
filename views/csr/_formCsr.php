@@ -33,12 +33,12 @@ use kartik\widgets\DatePicker;
 	    <?= $form->field($model, 'customer_phone', [
 	    			'options' => ['maxlength' => 255],
 	    			'addon' => ['prepend' => ['content' => '<i class="glyphicon glyphicon-phone"></i>']]
-		]) ?>
+		])->input('phone') ?>
 
 	    <?= $form->field($model, 'customer_email',[
 	    			'options' => ['maxlength' => 255],
 	    			'addon' => ['prepend' => ['content' => '<i class="glyphicon glyphicon-envelope"></i>']]
-		]) ?>
+		])->input('email') ?>
    	</div>
     <div class="col-md-9">
 	    <?= $form->field($model, 'title', [
@@ -64,7 +64,7 @@ use kartik\widgets\DatePicker;
 	    ); ?>
 
 	<div class="row">
-	    <div class="col-xs-6 col-md-4">
+	    <div class="col-md-6 col-md-4">
 	    	<?= $form->field($model, 'requested_at[date]')->widget(DatePicker::className(), [
 	        'pluginOptions' => [
 	            'format' => 'yyyy-mm-dd',
@@ -72,12 +72,12 @@ use kartik\widgets\DatePicker;
 	        ]
 	    ]); ?>
 	    </div>
-	    <div class="col-xs-6 col-md-2">
+	    <div class="col-md-6 col-md-2">
 		    <?= $form->field($model, 'requested_at[time]')->label(\Yii::t('app', 'Time'))->widget(TimePicker::className(), [
 		        'pluginOptions' => [ 'showMeridian' => false, 'showSeconds' => true,]
 		    ]); ?>
 	    </div>
-	    <div class="col-xs-6 col-md-4">
+	    <div class="col-md-6 col-md-4">
 	    <?= $form->field($model, 'replied_at[date]')->widget(DatePicker::className(), [
 	        'pluginOptions' => [
 	            'format' => 'yyyy-mm-dd',
@@ -85,7 +85,7 @@ use kartik\widgets\DatePicker;
 	        ]
 	    ]); ?>
 	    </div>
-	    <div class="col-xs-6 col-md-2">
+	    <div class="col-md-6 col-md-2">
 	     <?= $form->field($model, 'replied_at[time]')->label(\Yii::t('app', 'Time'))->widget(TimePicker::className(), [
 	        'pluginOptions' => [ 'showMeridian' => false, 'showSeconds' => true,]
 	    ]); ?>
@@ -93,7 +93,7 @@ use kartik\widgets\DatePicker;
     </div>
 
     <div class="row">
-	    <div class="col-xs-6 col-md-4">
+	    <div class="col-md-6 col-md-4">
 	    	 <?= $form->field($model, 'fixed_begin[date]')->widget(DatePicker::className(), [
 	        'pluginOptions' => [
 	            'format' => 'yyyy-mm-dd',
@@ -101,12 +101,12 @@ use kartik\widgets\DatePicker;
 	        ]
 	    ]); ?>
 	    </div>
-	    <div class="col-xs-6 col-md-2">
+	    <div class="col-md-6 col-md-2">
 	    <?= $form->field($model, 'fixed_begin[time]')->label(\Yii::t('app', 'Time'))->widget(TimePicker::className(), [
 	        'pluginOptions' => [ 'showMeridian' => false, 'showSeconds' => TRUE ]
 	    ]); ?>
 	    </div>
-	    <div class="col-xs-6 col-md-4">
+	    <div class="col-md-6 col-md-4">
 	    <?= $form->field($model, 'fixed_end[date]')->widget(DatePicker::className(), [
 	        'pluginOptions' => [
 	            'format' => 'yyyy-mm-dd',
@@ -114,7 +114,7 @@ use kartik\widgets\DatePicker;
 	        ]
 	    ]); ?>
 	    </div>
-	    <div class="col-xs-6 col-md-2">
+	    <div class="col-md-6 col-md-2">
 	    <?= $form->field($model, 'fixed_end[time]')->label(\Yii::t('app', 'Time'))->widget(TimePicker::className(), [
 	        'pluginOptions' => [ 'showMeridian' => false, 'showSeconds' => true,]
 	    ]); ?>

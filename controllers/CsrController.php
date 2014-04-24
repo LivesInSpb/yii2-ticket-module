@@ -51,7 +51,7 @@ class CsrController extends Controller
         $param['TicketSearch']['type'] = Ticket::TYPE_CSR;
         $dataProvider = $searchModel->search($param);
 
-        return $this->render('indexTicket', [
+        return $this->render('indexCsr', [
             'dataProvider' => $dataProvider,
             'searchModel' => $searchModel,
         ]);
@@ -64,7 +64,7 @@ class CsrController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('viewTicket', [
+        return $this->render('viewCsr', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -87,7 +87,7 @@ class CsrController extends Controller
         		return \yii\helpers\VarDumper::dumpAsString($model->errors);
         } else {
         	$model->parseDate();
-            return $this->render('createTicket', [
+            return $this->render('createCsr', [
                 'model' => $model,
             ]);
         }
@@ -112,7 +112,7 @@ class CsrController extends Controller
         		return \yii\helpers\VarDumper::dumpAsString($model->errors);
         } else {
         	$model->parseDate();
-            return $this->render('updateTicket', [
+            return $this->render('updateCsr', [
                 'model' => $model,
             ]);
         }
