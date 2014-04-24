@@ -33,7 +33,7 @@ use kartik\widgets\DatePicker;
 	    <?= $form->field($model, 'customer_phone', [
 	    			'options' => ['maxlength' => 255],
 	    			'addon' => ['prepend' => ['content' => '<i class="glyphicon glyphicon-phone"></i>']]
-		])->input('phone') ?>
+		])->input('tel') ?>
 
 	    <?= $form->field($model, 'customer_email',[
 	    			'options' => ['maxlength' => 255],
