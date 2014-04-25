@@ -5,11 +5,13 @@ use yii\widgets\DetailView;
 use istt\ticket\models\Ticket;
 ?>
 
-    <h1><small><?= \Yii::t('app', 'Ticket'); ?>:</small> <?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <h3><?= \Yii::t('ticket', 'Customer Information')?></h3>
+
   					<?= DetailView::widget([
 					        'model' => $model,
+  							'template' => "<strong>{label}: </strong><em>{value}</em><br>",
 					        'attributes' => [
 					            'customer_fullname',
 					            'customer_company',
@@ -18,8 +20,10 @@ use istt\ticket\models\Ticket;
 					]]); ?>
 <?php if ($model->type == Ticket::TYPE_RMA):?>
     <h3><?= \Yii::t('ticket', 'RMA Information')?></h3>
+
   					<?=  DetailView::widget([
 					        'model' => $model,
+  							'template' => "<strong>{label}: </strong><em>{value}</em><br>",
 					        'attributes' => [
 					            'system',
 					             ['attribute' => 'priority', 'value' => is_null($model->priority)?NULL:Ticket::priorityOptions($model->priority)],
@@ -44,8 +48,10 @@ use istt\ticket\models\Ticket;
 
 <?php if ($model->type == Ticket::TYPE_CSR):?>
 <h3><?= \Yii::t('ticket', 'CSR Information')?></h3>
+
   					<?=  DetailView::widget([
 					        'model' => $model,
+  							'template' => "<strong>{label}: </strong><em>{value}</em><br>",
 					        'attributes' => [
 					            'system',
 					            ['attribute' => 'priority', 'value' => is_null($model->priority)?NULL:Ticket::priorityOptions($model->priority)],
