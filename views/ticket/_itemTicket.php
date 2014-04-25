@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 ?>
 <div class="ticket-view">
 
-    <h1><small><?= \Yii::t('app', 'Ticket'); ?>:</small> <?= Html::encode($this->title) ?></h1>
+    <h1><small><?= \Yii::t('ticket', 'Ticket'); ?>:</small> <?= Html::encode($this->title) ?></h1>
 
 
     <?= DetailView::widget([

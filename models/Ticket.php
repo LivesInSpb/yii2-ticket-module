@@ -119,8 +119,8 @@ class Ticket extends \yii\db\ActiveRecord
     const TYPE_CSR = 2;
     public static function typeOptions($i = NULL) {
         	$options = [
-    			self::TYPE_RMA		=>	\Yii::t('app', 'YÊU CẦU BẢO HÀNH PHẦN CỨNG'),
-    			self::TYPE_CSR			=>	\Yii::t('app', 'YÊU CẦU XỬ LÝ SỰ CỐ'),
+    			self::TYPE_RMA		=>	\Yii::t('ticket', 'Rma'),
+    			self::TYPE_CSR			=>	\Yii::t('ticket', 'Csr'),
         	];
         	if (is_null($i)) return $options;
         	elseif (array_key_exists($i, $options)) return $options[$i];
@@ -131,8 +131,8 @@ class Ticket extends \yii\db\ActiveRecord
      const STATUS_CLOSED = 1;
     public static function statusOptions($i = NULL) {
         	$options = [
-    			self::STATUS_OPEN		=>	\Yii::t('app', 'Open'),
-    			self::STATUS_CLOSED		=>	\Yii::t('app', 'Closed'),
+    			self::STATUS_OPEN		=>	\Yii::t('ticket', 'Open'),
+    			self::STATUS_CLOSED		=>	\Yii::t('ticket', 'Closed'),
         	];
         	if (is_null($i)) return $options;
         	elseif (array_key_exists($i, $options)) return $options[$i];
@@ -145,10 +145,10 @@ class Ticket extends \yii\db\ActiveRecord
     const PRIORITY_QUESTION = 4;
     public static function priorityOptions($i = NULL) {
         	$options = [
-    			self::PRIORITY_CRITICAL		=>	\Yii::t('app', 'Critical'),
-    			self::PRIORITY_MAJOR			=>	\Yii::t('app', 'Major'),
-    			self::PRIORITY_MINOR			=>	\Yii::t('app', 'Minor'),
-    			self::PRIORITY_QUESTION		=>	\Yii::t('app', 'Technical Question'),
+    			self::PRIORITY_CRITICAL		=>	\Yii::t('ticket', 'Critical'),
+    			self::PRIORITY_MAJOR			=>	\Yii::t('ticket', 'Major'),
+    			self::PRIORITY_MINOR			=>	\Yii::t('ticket', 'Minor'),
+    			self::PRIORITY_QUESTION		=>	\Yii::t('ticket', 'Technical Question'),
         	];
         	if (is_null($i)) return $options;
         	elseif (array_key_exists($i, $options)) return $options[$i];

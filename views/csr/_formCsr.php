@@ -73,7 +73,7 @@ use kartik\widgets\DatePicker;
 	    ]); ?>
 	    </div>
 	    <div class="col-md-6 col-md-2">
-		    <?= $form->field($model, 'requested_at[time]')->label(\Yii::t('app', 'Time'))->widget(TimePicker::className(), [
+		    <?= $form->field($model, 'requested_at[time]')->label(\Yii::t('ticket', 'Time'))->widget(TimePicker::className(), [
 		        'pluginOptions' => [ 'showMeridian' => false, 'showSeconds' => true,]
 		    ]); ?>
 	    </div>
@@ -86,7 +86,7 @@ use kartik\widgets\DatePicker;
 	    ]); ?>
 	    </div>
 	    <div class="col-md-6 col-md-2">
-	     <?= $form->field($model, 'replied_at[time]')->label(\Yii::t('app', 'Time'))->widget(TimePicker::className(), [
+	     <?= $form->field($model, 'replied_at[time]')->label(\Yii::t('ticket', 'Time'))->widget(TimePicker::className(), [
 	        'pluginOptions' => [ 'showMeridian' => false, 'showSeconds' => true,]
 	    ]); ?>
 	    </div>
@@ -102,7 +102,7 @@ use kartik\widgets\DatePicker;
 	    ]); ?>
 	    </div>
 	    <div class="col-md-6 col-md-2">
-	    <?= $form->field($model, 'fixed_begin[time]')->label(\Yii::t('app', 'Time'))->widget(TimePicker::className(), [
+	    <?= $form->field($model, 'fixed_begin[time]')->label(\Yii::t('ticket', 'Time'))->widget(TimePicker::className(), [
 	        'pluginOptions' => [ 'showMeridian' => false, 'showSeconds' => TRUE ]
 	    ]); ?>
 	    </div>
@@ -115,7 +115,7 @@ use kartik\widgets\DatePicker;
 	    ]); ?>
 	    </div>
 	    <div class="col-md-6 col-md-2">
-	    <?= $form->field($model, 'fixed_end[time]')->label(\Yii::t('app', 'Time'))->widget(TimePicker::className(), [
+	    <?= $form->field($model, 'fixed_end[time]')->label(\Yii::t('ticket', 'Time'))->widget(TimePicker::className(), [
 	        'pluginOptions' => [ 'showMeridian' => false, 'showSeconds' => true,]
 	    ]); ?>
 	    </div>
